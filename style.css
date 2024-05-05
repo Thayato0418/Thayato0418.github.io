@@ -1,0 +1,32 @@
+/* 基本的なスタイル */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    color: #000000;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    margin-top: 20px;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* リンクのスタイル */
+a {
+    color: #1e50e5;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
