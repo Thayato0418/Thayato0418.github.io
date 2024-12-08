@@ -25,6 +25,7 @@ p {
 /* リンクのスタイル */
 a {
     color: #1e50e5;
+    /* font-size: 30px; */
     text-decoration: none;
 }
 
@@ -37,4 +38,23 @@ a:hover {
 }
 .em {
     font-size: 1.5em
+}
+
+div#content {
+    /* background-color: #99cc33; */
+    width: 1000px;
+    overflow: hidden;
+}
+    
+div#main {
+/* background-color: #f0f0f0; */
+width: 300px;
+float: left;
+}
+
+nav {
+/* color: #000000; */
+/* background-color: #6133cc; */
+width: 400px;
+float: right;
 }
