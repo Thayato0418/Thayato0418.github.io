@@ -31,3 +31,10 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.px {
+    font-size: 20px
+}
+.em {
+    font-size: 1.5em
+}
