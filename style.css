@@ -1,60 +1,46 @@
-/* 基本的なスタイル */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    color: #000000;
-
+body{
+    background-image:url("bg034_02.gif");
+}
+h1{
+    color:#FFFFFF;
+    background-color:#FF3333;
+    border-radius:5px;
+    border-left:solid 10px #000000;
+    border-right:solid 10px #000000;
+    padding:5px 7px;
+}
+h2{
+    display:table;
+    border:solid 1px #000000;
+    border-radius:5px;
+    padding:5px 7px;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+h3{
+    font-family:sans-serif;
+    font-size:14pt;
+    border:solid 1px #000000;
+    border-radius:5px;
+    padding:1px 10px;
+    margin-top:20px;
+    margin-bottom:10px;
+}
+/* <a>タグの「疑似クラス」 */
+a:link{
+    text-decoration:none;
+    color:#003cff;
+    font-size:20px
+}
+a:visited{
+    color:#990099;
+}
+a:hover{
+    color:#FF0000;
+    font-weight:bold;
 }
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h1, h2, h3 {
-    margin-top: 20px;
-}
-
-p {
-    margin-bottom: 10px;
-}
-
-/* リンクのスタイル */
-a {
-    color: #1e50e5;
-    /* font-size: 30px; */
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.px {
-    font-size: 20px
-}
-.em {
-    font-size: 1.5em
-}
-
-div#content {
-    /* background-color: #99cc33; */
-    width: 1000px;
-    overflow: hidden;
-}
-    
-div#main {
-/* background-color: #f0f0f0; */
-width: 300px;
-float: left;
-}
-
-nav {
-/* color: #000000; */
-/* background-color: #6133cc; */
-width: 450px;
-float: right;
+dl dd {
+    margin-bottom:20px;  /* 下の間隔を20pxに設定 */
+    margin-left:20px;    /* インデントはそのまま */
 }
