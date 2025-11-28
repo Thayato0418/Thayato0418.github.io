@@ -1,6 +1,17 @@
 body{
-    background-color:#f1d8c3;
+    max-width:700px;
+    margin:0 auto;
+    padding:10px;
 }
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-color:#f1d8c3;
+    z-index:-1;
+}
+
 h1{
     color:#FFFFFF;
     background-color:#FF3333;
@@ -9,6 +20,7 @@ h1{
     border-right:solid 10px #000000;
     padding:5px 7px;
 }
+
 h2{
     display:table;
     border:solid 1px #000000;
@@ -17,6 +29,7 @@ h2{
     margin-top:20px;
     margin-bottom:10px;
 }
+
 h3{
     font-family:sans-serif;
     font-size:14pt;
@@ -32,15 +45,12 @@ a:link{
     color:#003cff;
     font-size:20px
 }
+
 a:visited{
     color:#990099;
 }
+
 a:hover{
     color:#FF0000;
     font-weight:bold;
-}
-
-dl dd {
-    margin-bottom:20px;  /* 下の間隔を20pxに設定 */
-    margin-left:20px;    /* インデントはそのまま */
 }
