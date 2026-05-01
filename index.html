@@ -4,10 +4,146 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thayatoのリンク集</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="./figure/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background-color: #f4f2ee;
+      color: #1a1a1a;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+    }
+
+    /* ---------- プロフィール ---------- */
+    .profile-card {
+      background: #ffffff;
+      border: 1px solid #e2ddd6;
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #dbeafe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 500;
+      color: #1e40af;
+      flex-shrink: 0;
+    }
+    .profile-name {
+      font-size: 17px;
+      font-weight: 500;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+    .profile-role {
+      font-size: 13px;
+      color: #6b6b6b;
+    }
+
+    /* ---------- セクション ---------- */
+    .section { margin-bottom: 1.75rem; }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0.75rem;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #e2ddd6;
+    }
+    .section-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.06em;
+    }
+    .section-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #444;
+    }
+
+    /* タグ色 */
+    .tag-social  { background: #dbeafe; color: #1e40af; }
+    .tag-ctf     { background: #fef3c7; color: #92400e; }
+    .tag-bug     { background: #fee2e2; color: #991b1b; }
+    .tag-news    { background: #dcfce7; color: #166534; }
+    .tag-people  { background: #d1fae5; color: #065f46; }
+
+    /* ---------- リンクカード ---------- */
+    .link-grid { display: grid; gap: 6px; }
+
+    .link-item {
+      background: #ffffff;
+      border: 1px solid #e2ddd6;
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      text-decoration: none;
+      transition: border-color 0.15s ease, background 0.15s ease;
+    }
+    .link-item:hover {
+      border-color: #c0b9b0;
+      background: #faf9f6;
+    }
+
+    /* ドット */
+    .link-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+    .dot-social  { background: #3b82f6; }
+    .dot-ctf     { background: #d97706; }
+    .dot-bug     { background: #ef4444; }
+    .dot-news    { background: #22c55e; }
+    .dot-people  { background: #10b981; }
+
+    .link-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: #1a1a1a;
+      margin-bottom: 2px;
+    }
+    .link-desc {
+      font-size: 12px;
+      color: #6b6b6b;
+      line-height: 1.55;
+    }
+
+    /* ---------- レスポンシブ ---------- */
+    @media (max-width: 480px) {
+      .container { padding: 1.25rem 0.75rem 2rem; }
+      .profile-card { padding: 0.875rem 1rem; }
+      .link-item { padding: 9px 12px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -16,13 +152,13 @@
     <!-- プロフィール -->
     <div class="profile-card">
       <div class="avatar">TH</div>
-      <div class="profile-info">
+      <div>
         <div class="profile-name">Thayato</div>
         <div class="profile-role">セキュリティエンジニア</div>
       </div>
     </div>
 
-    <!-- ===== セクション: よく使うサービス ===== -->
+    <!-- ===== よく使うサービス ===== -->
     <section class="section">
       <div class="section-header">
         <span class="section-tag tag-social">SOCIAL</span>
@@ -64,11 +200,11 @@
             <div class="link-desc">自分の読書旅がたどれる場所</div>
           </div>
         </a>
-        <!-- ▼ 新しいリンクはここに追加 (↑ のパターンをコピー) -->
+        <!-- ▼ 新しいリンクはここに追加 -->
       </div>
     </section>
 
-    <!-- ===== セクション: CTF ===== -->
+    <!-- ===== CTF ===== -->
     <section class="section">
       <div class="section-header">
         <span class="section-tag tag-ctf">CTF</span>
@@ -107,7 +243,7 @@
       </div>
     </section>
 
-    <!-- ===== セクション: Bugbounty ===== -->
+    <!-- ===== Bugbounty ===== -->
     <section class="section">
       <div class="section-header">
         <span class="section-tag tag-bug">BUG BOUNTY</span>
@@ -153,7 +289,7 @@
       </div>
     </section>
 
-    <!-- ===== セクション: ニュース ===== -->
+    <!-- ===== ニュース ===== -->
     <section class="section">
       <div class="section-header">
         <span class="section-tag tag-news">NEWS</span>
@@ -192,7 +328,7 @@
       </div>
     </section>
 
-    <!-- ===== セクション: よく見る方々 ===== -->
+    <!-- ===== よく見る方々 ===== -->
     <section class="section">
       <div class="section-header">
         <span class="section-tag tag-people">PEOPLE</span>
@@ -231,7 +367,8 @@
       </div>
     </section>
 
-    <!-- ===== 新しいセクションを追加する場合のテンプレート =====
+    <!--
+    ===== 新しいセクションを追加するテンプレート =====
 
     <section class="section">
       <div class="section-header">
@@ -249,9 +386,16 @@
       </div>
     </section>
 
-    ===== -->
+    タグ色の種類:
+      tag-social / dot-social  → 青
+      tag-ctf    / dot-ctf     → 橙
+      tag-bug    / dot-bug     → 赤
+      tag-news   / dot-news    → 緑
+      tag-people / dot-people  → 緑2
+    =====
+    -->
 
-  </div><!-- /container -->
+  </div>
 
 </body>
 </html>
