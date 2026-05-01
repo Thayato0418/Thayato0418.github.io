@@ -1,59 +1,170 @@
-body{
-    max-width:700px;
-    margin:0 auto;
-    padding:10px;
+/* =============================================
+   Thayato リンク集 - style.css
+   =============================================
+   カラーカテゴリの対応:
+     tag-social  → 青  (よく使うサービス)
+     tag-ctf     → 橙  (CTF)
+     tag-bug     → 赤  (Bugbounty)
+     tag-news    → 緑  (ニュース)
+     tag-people  → 緑2 (よく見る方々)
+   新しいカテゴリを追加する際は下部の
+   "カテゴリ追加テンプレート" を参照してください
+============================================= */
+
+/* ---- リセット & ベース ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Sans JP', 'JetBrains Mono', sans-serif;
+  background-color: #f4f2ee;
+  color: #1a1a1a;
+  line-height: 1.6;
+  min-height: 100vh;
 }
 
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background-color:#f1d8c3;
-    z-index:-1;
+/* ---- レイアウト ---- */
+.container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
 }
 
-h1{
-    color:#FFFFFF;
-    background-color:#FF3333;
-    border-radius:5px;
-    border-left:solid 10px #000000;
-    border-right:solid 10px #000000;
-    padding:5px 7px;
+/* ---- プロフィールカード ---- */
+.profile-card {
+  background: #ffffff;
+  border: 1px solid #e2ddd6;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #dbeafe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e40af;
+  flex-shrink: 0;
+}
+.profile-name {
+  font-size: 17px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+.profile-role {
+  font-size: 13px;
+  color: #6b6b6b;
 }
 
-h2{
-    display:table;
-    border:solid 1px #000000;
-    border-radius:5px;
-    padding:5px 7px;
-    margin-top:20px;
-    margin-bottom:10px;
+/* ---- セクション ---- */
+.section { margin-bottom: 1.75rem; }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.75rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e2ddd6;
 }
 
-h3{
-    font-family:sans-serif;
-    font-size:14pt;
-    border:solid 1px #000000;
-    border-radius:5px;
-    padding:1px 10px;
-    margin-top:20px;
-    margin-bottom:10px;
-}
-/* <a>タグの「疑似クラス」 */
-a:link{
-    text-decoration:none;
-    color:#003cff;
-    font-size:20px
+.section-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.06em;
 }
 
-a:visited{
-    color:#990099;
+.section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
 }
 
-a:hover{
-    color:#FF0000;
-    font-weight:bold;
+/* ---- カテゴリ別タグ色 ---- */
+.tag-social  { background: #dbeafe; color: #1e40af; }
+.tag-ctf     { background: #fef3c7; color: #92400e; }
+.tag-bug     { background: #fee2e2; color: #991b1b; }
+.tag-news    { background: #dcfce7; color: #166534; }
+.tag-people  { background: #d1fae5; color: #065f46; }
+
+/* ---- リンクグリッド ---- */
+.link-grid { display: grid; grid-template-columns: 1fr; gap: 6px; }
+
+/* ---- リンクカード ---- */
+.link-item {
+  background: #ffffff;
+  border: 1px solid #e2ddd6;
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-decoration: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
-dt {
-    margin-top:20px;
+.link-item:hover {
+  border-color: #c0b9b0;
+  background: #faf9f6;
 }
+
+/* ---- ドット (カテゴリ別) ---- */
+.link-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+.dot-social  { background: #3b82f6; }
+.dot-ctf     { background: #d97706; }
+.dot-bug     { background: #ef4444; }
+.dot-news    { background: #22c55e; }
+.dot-people  { background: #10b981; }
+
+/* ---- テキスト ---- */
+.link-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+.link-desc {
+  font-size: 12px;
+  color: #6b6b6b;
+  line-height: 1.55;
+}
+
+/* ---- レスポンシブ ---- */
+@media (max-width: 480px) {
+  .container { padding: 1.25rem 0.75rem 2rem; }
+  .profile-card { padding: 0.875rem 1rem; }
+  .link-item { padding: 9px 12px; }
+}
+
+
+/* =============================================
+   カテゴリ追加テンプレート
+   ---------------------------------------------
+   新しいカテゴリを追加するときは以下をコピーして
+   実際の色に変えてください。
+
+   HTML側では:
+     section-tag に "tag-xxx" を追加
+     link-dot    に "dot-xxx" を追加
+
+   .tag-xxx { background: #???; color: #???; }
+   .dot-xxx { background: #???; }
+============================================= */
+
