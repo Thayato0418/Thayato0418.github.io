@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thayatoのリンク集</title>
+  <title>h_Takaraのリンク集</title>
   <link rel="shortcut icon" href="./figure/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
       border: 1px solid #e2ddd6;
       border-radius: 12px;
       padding: 1rem 1.25rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
       gap: 14px;
@@ -60,17 +60,46 @@
       color: #6b6b6b;
     }
 
-    /* ---------- セクション ---------- */
-    .section { margin-bottom: 1.75rem; }
+    /* ---------- アコーディオン ---------- */
+    details {
+      background: #ffffff;
+      border: 1px solid #e2ddd6;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
 
-    .section-header {
+    summary {
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 0.75rem;
-      padding-bottom: 8px;
+      gap: 10px;
+      padding: 0.875rem 1rem;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+      transition: background 0.12s ease;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary:hover { background: #faf9f6; }
+
+    /* 開いているときのヘッダー */
+    details[open] > summary {
       border-bottom: 1px solid #e2ddd6;
     }
+
+    /* 矢印アイコン */
+    .chevron {
+      width: 16px;
+      height: 16px;
+      margin-left: auto;
+      flex-shrink: 0;
+      color: #aaa;
+      transition: transform 0.2s ease;
+    }
+    details[open] .chevron {
+      transform: rotate(90deg);
+    }
+
     .section-tag {
       font-family: 'JetBrains Mono', monospace;
       font-size: 10px;
@@ -78,11 +107,17 @@
       padding: 2px 8px;
       border-radius: 6px;
       letter-spacing: 0.06em;
+      flex-shrink: 0;
     }
     .section-title {
       font-size: 14px;
       font-weight: 500;
-      color: #444;
+      color: #333;
+    }
+    .section-count {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: #aaa;
     }
 
     /* タグ色 */
@@ -92,11 +127,15 @@
     .tag-news    { background: #dcfce7; color: #166534; }
     .tag-people  { background: #d1fae5; color: #065f46; }
 
-    /* ---------- リンクカード ---------- */
-    .link-grid { display: grid; gap: 6px; }
+    /* ---------- リンクグリッド ---------- */
+    .link-grid {
+      display: grid;
+      gap: 6px;
+      padding: 0.75rem;
+    }
 
     .link-item {
-      background: #ffffff;
+      background: #faf9f6;
       border: 1px solid #e2ddd6;
       border-radius: 8px;
       padding: 10px 14px;
@@ -108,7 +147,7 @@
     }
     .link-item:hover {
       border-color: #c0b9b0;
-      background: #faf9f6;
+      background: #f0ede8;
     }
 
     /* ドット */
@@ -141,7 +180,6 @@
     @media (max-width: 480px) {
       .container { padding: 1.25rem 0.75rem 2rem; }
       .profile-card { padding: 0.875rem 1rem; }
-      .link-item { padding: 9px 12px; }
     }
   </style>
 </head>
@@ -153,17 +191,21 @@
     <div class="profile-card">
       <div class="avatar">TH</div>
       <div>
-        <div class="profile-name">Thayato</div>
-        <div class="profile-role">セキュリティエンジニア</div>
+        <div class="profile-name">h_Takara</div>
+        <div class="profile-role">Security Engineer</div>
       </div>
     </div>
 
     <!-- ===== よく使うサービス ===== -->
-    <section class="section">
-      <div class="section-header">
+    <details>
+      <summary>
         <span class="section-tag tag-social">SOCIAL</span>
-        <span class="section-title">よく使うサービス</span>
-      </div>
+        <span class="section-title">Frequently Used Services</span>
+        <span class="section-count">5</span>
+        <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 3 11 8 6 13"/>
+        </svg>
+      </summary>
       <div class="link-grid">
         <a class="link-item" href="https://github.com/Thayato0418">
           <span class="link-dot dot-social"></span>
@@ -200,16 +242,20 @@
             <div class="link-desc">自分の読書旅がたどれる場所</div>
           </div>
         </a>
-        <!-- ▼ 新しいリンクはここに追加 -->
+        <!-- ▼ 新しいリンクはここに追加 (section-count も +1 してください) -->
       </div>
-    </section>
+    </details>
 
     <!-- ===== CTF ===== -->
-    <section class="section">
-      <div class="section-header">
+    <details>
+      <summary>
         <span class="section-tag tag-ctf">CTF</span>
         <span class="section-title">CTF</span>
-      </div>
+        <span class="section-count">4</span>
+        <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 3 11 8 6 13"/>
+        </svg>
+      </summary>
       <div class="link-grid">
         <a class="link-item" href="https://play.picoctf.org/practice">
           <span class="link-dot dot-ctf"></span>
@@ -239,16 +285,20 @@
             <div class="link-desc">CTFが開催される日程が書いている．</div>
           </div>
         </a>
-        <!-- ▼ 新しいリンクはここに追加 -->
+        <!-- ▼ 新しいリンクはここに追加 (section-count も +1 してください) -->
       </div>
-    </section>
+    </details>
 
     <!-- ===== Bugbounty ===== -->
-    <section class="section">
-      <div class="section-header">
+    <details>
+      <summary>
         <span class="section-tag tag-bug">BUG BOUNTY</span>
         <span class="section-title">Bugbounty</span>
-      </div>
+        <span class="section-count">5</span>
+        <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 3 11 8 6 13"/>
+        </svg>
+      </summary>
       <div class="link-grid">
         <a class="link-item" href="https://issuehunt.io/">
           <span class="link-dot dot-bug"></span>
@@ -285,16 +335,20 @@
             <div class="link-desc">Intigriti の次にヨーロッパで盛んなプラットフォーム</div>
           </div>
         </a>
-        <!-- ▼ 新しいリンクはここに追加 -->
+        <!-- ▼ 新しいリンクはここに追加 (section-count も +1 してください) -->
       </div>
-    </section>
+    </details>
 
     <!-- ===== ニュース ===== -->
-    <section class="section">
-      <div class="section-header">
+    <details>
+      <summary>
         <span class="section-tag tag-news">NEWS</span>
-        <span class="section-title">ニュースサイト</span>
-      </div>
+        <span class="section-title">News Site</span>
+        <span class="section-count">4</span>
+        <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 3 11 8 6 13"/>
+        </svg>
+      </summary>
       <div class="link-grid">
         <a class="link-item" href="https://gigazine.net/">
           <span class="link-dot dot-news"></span>
@@ -324,16 +378,20 @@
             <div class="link-desc">IT関連の最新ニュースを提供</div>
           </div>
         </a>
-        <!-- ▼ 新しいリンクはここに追加 -->
+        <!-- ▼ 新しいリンクはここに追加 (section-count も +1 してください) -->
       </div>
-    </section>
+    </details>
 
     <!-- ===== よく見る方々 ===== -->
-    <section class="section">
-      <div class="section-header">
+    <details>
+      <summary>
         <span class="section-tag tag-people">PEOPLE</span>
-        <span class="section-title">よく見る方々</span>
-      </div>
+        <span class="section-title">Frequently Followed People</span>
+        <span class="section-count">4</span>
+        <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 3 11 8 6 13"/>
+        </svg>
+      </summary>
       <div class="link-grid">
         <a class="link-item" href="https://piyolog.hatenadiary.jp/">
           <span class="link-dot dot-people"></span>
@@ -363,18 +421,22 @@
             <div class="link-desc">根岸征史氏と辻伸弘氏，piyokango氏による，ゆるーいセキュリティのポッドキャスト（雑談多め）</div>
           </div>
         </a>
-        <!-- ▼ 新しいリンクはここに追加 -->
+        <!-- ▼ 新しいリンクはここに追加 (section-count も +1 してください) -->
       </div>
-    </section>
+    </details>
 
     <!--
     ===== 新しいセクションを追加するテンプレート =====
 
-    <section class="section">
-      <div class="section-header">
+    <details>
+      <summary>
         <span class="section-tag tag-social">LABEL</span>
         <span class="section-title">セクション名</span>
-      </div>
+        <span class="section-count">1</span>
+        <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 3 11 8 6 13"/>
+        </svg>
+      </summary>
       <div class="link-grid">
         <a class="link-item" href="https://example.com/">
           <span class="link-dot dot-social"></span>
@@ -384,7 +446,7 @@
           </div>
         </a>
       </div>
-    </section>
+    </details>
 
     タグ色の種類:
       tag-social / dot-social  → 青
@@ -392,6 +454,9 @@
       tag-bug    / dot-bug     → 赤
       tag-news   / dot-news    → 緑
       tag-people / dot-people  → 緑2
+
+    ※ デフォルトで開いた状態にしたい場合は
+      <details open> にしてください
     =====
     -->
 
