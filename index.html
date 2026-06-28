@@ -3,818 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="h_Takara / Security Engineer のプロフィールサイト。CTF、Webセキュリティ、Bug Bounty、技術発信へのリンクをまとめています。">
+  <meta name="description" content="h_Takara / Security Engineer のプロフィールサイト．CTF，Webセキュリティ，Bug Bounty，技術発信へのリンクをまとめています．">
   <title>h_Takara | Security Engineer</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23134e4a'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-family='monospace' font-size='22' font-weight='700' fill='white'%3ETH%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; }
-
-    :root {
-      --ink: #171717;
-      --muted: #5f615d;
-      --paper: #f6f3ec;
-      --panel: #fffdf8;
-      --line: #d9d4ca;
-      --accent: #0f766e;
-      --accent-dark: #123f3b;
-      --coral: #e45858;
-      --violet: #6d5bd0;
-      --blue: #2563eb;
-      --amber: #b45309;
-      --red: #dc2626;
-      --green: #15803d;
-      --shadow: 0 18px 50px rgba(41, 31, 18, 0.1);
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 92px;
-    }
-
-    body {
-      position: relative;
-      margin: 0;
-      font-family: "Noto Sans JP", sans-serif;
-      background:
-        linear-gradient(120deg, rgba(15, 118, 110, 0.14), transparent 30%),
-        linear-gradient(300deg, rgba(228, 88, 88, 0.1), transparent 28%),
-        linear-gradient(180deg, #fbfaf6 0%, var(--paper) 54%, #ebe8e0 100%);
-      color: var(--ink);
-      line-height: 1.75;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    body::before {
-      position: fixed;
-      inset: 0;
-      z-index: -1;
-      pointer-events: none;
-      content: "";
-      background-image:
-        linear-gradient(rgba(18, 63, 59, 0.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(18, 63, 59, 0.045) 1px, transparent 1px);
-      background-size: 44px 44px;
-      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 72%);
-      animation: gridShift 18s linear infinite;
-    }
-
-    a { color: inherit; }
-
-    .site {
-      width: min(1160px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 28px 0 56px;
-    }
-
-    .nav {
-      position: sticky;
-      top: 12px;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 28px;
-      padding: 10px 12px;
-      border: 1px solid rgba(217, 212, 202, 0.76);
-      border-radius: 10px;
-      background: rgba(255, 253, 248, 0.82);
-      box-shadow: 0 10px 32px rgba(41, 31, 18, 0.06);
-      backdrop-filter: blur(14px);
-      font-family: "JetBrains Mono", monospace;
-      font-size: 13px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 34px;
-      height: 34px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      color: var(--accent-dark);
-      transition: transform 0.18s ease, background 0.18s ease;
-    }
-
-    .brand:hover .brand-mark {
-      transform: rotate(-4deg) translateY(-1px);
-      background: #d7fff6;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      color: var(--muted);
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-    }
-
-    .nav-links a:hover { border-color: currentColor; }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(350px, 0.92fr);
-      align-items: stretch;
-      gap: 20px;
-      min-height: 560px;
-      margin-bottom: 24px;
-    }
-
-    .hero-copy {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: clamp(28px, 6vw, 64px);
-      background: rgba(255, 253, 250, 0.86);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      animation: riseIn 0.7s ease both;
-    }
-
-    .eyebrow {
-      width: fit-content;
-      margin: 0 0 18px;
-      padding: 4px 10px;
-      border: 1px solid rgba(15, 118, 110, 0.24);
-      border-radius: 999px;
-      color: var(--accent-dark);
-      background: rgba(15, 118, 110, 0.08);
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-      font-weight: 500;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(42px, 8vw, 86px);
-      line-height: 0.98;
-      letter-spacing: 0;
-    }
-
-    .name-accent {
-      display: inline-block;
-      color: var(--accent-dark);
-      text-shadow: 0 10px 26px rgba(15, 118, 110, 0.18);
-    }
-
-    .lead {
-      max-width: 620px;
-      margin: 24px 0 0;
-      color: #34322f;
-      font-size: clamp(16px, 2vw, 19px);
-      font-weight: 500;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 30px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      min-height: 42px;
-      padding: 0 16px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      color: var(--ink);
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
-    }
-
-    .button.primary {
-      background: var(--accent-dark);
-      border-color: var(--accent-dark);
-      color: #fff;
-    }
-
-    .button:hover {
-      transform: translateY(-2px);
-      border-color: #a99e90;
-      box-shadow: 0 12px 28px rgba(41, 31, 18, 0.1);
-    }
-
-    .hero-visual {
-      position: relative;
-      min-height: 360px;
-      overflow: hidden;
-      border: 1px solid #123f3b;
-      border-radius: 8px;
-      background: #10201e;
-      color: #d7fff6;
-      box-shadow: var(--shadow);
-      animation: riseIn 0.7s 0.12s ease both, floatPanel 7s ease-in-out infinite;
-    }
-
-    .hero-visual::after {
-      position: absolute;
-      inset: 0;
-      content: "";
-      background: linear-gradient(180deg, transparent, rgba(94, 234, 212, 0.08), transparent);
-      transform: translateY(-100%);
-      animation: scanLine 4.6s linear infinite;
-    }
-
-    .hero-visual svg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .signal-path {
-      stroke-dasharray: 10 18;
-      animation: dashMove 7s linear infinite;
-    }
-
-    .pulse-ring {
-      transform-box: fill-box;
-      transform-origin: center;
-      animation: pulseRing 3.8s ease-in-out infinite;
-    }
-
-    .pulse-ring:nth-child(2) { animation-delay: 0.6s; }
-    .pulse-ring:nth-child(3) { animation-delay: 1.2s; }
-
-    .terminal {
-      position: absolute;
-      left: 22px;
-      right: 22px;
-      bottom: 22px;
-      padding: 16px;
-      border: 1px solid rgba(183, 255, 239, 0.18);
-      border-radius: 8px;
-      background: rgba(8, 18, 17, 0.76);
-      backdrop-filter: blur(10px);
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-      line-height: 1.85;
-      z-index: 1;
-      animation: terminalGlow 4.4s ease-in-out infinite;
-    }
-
-    .terminal-bar {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 12px;
-    }
-
-    .terminal-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #60a5fa;
-    }
-
-    .terminal-dot:nth-child(2) { background: #f59e0b; }
-    .terminal-dot:nth-child(3) { background: #34d399; }
-
-    .prompt { color: #67e8f9; }
-    .ok { color: #86efac; }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin: 0 0 32px;
-    }
-
-    .stat {
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      transition: transform 0.18s ease, border-color 0.18s ease;
-      animation: riseIn 0.6s ease both;
-    }
-
-    .stat:nth-child(2) { animation-delay: 0.08s; }
-    .stat:nth-child(3) { animation-delay: 0.16s; }
-
-    .stat:hover {
-      transform: translateY(-3px);
-      border-color: #b7aca0;
-    }
-
-    .stat strong {
-      display: block;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 25px;
-      line-height: 1.2;
-    }
-
-    .stat span {
-      display: block;
-      margin-top: 4px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    section {
-      margin-top: 36px;
-      scroll-margin-top: 92px;
-    }
-
-    #about {
-      scroll-margin-top: 92px;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 14px;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(22px, 3vw, 30px);
-      letter-spacing: 0;
-    }
-
-    .section-note {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .card {
-      min-height: 180px;
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      box-shadow: 0 8px 28px rgba(41, 31, 18, 0.04);
-      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: #b7aca0;
-      box-shadow: 0 16px 34px rgba(41, 31, 18, 0.09);
-    }
-
-    .card-kicker {
-      display: inline-flex;
-      margin-bottom: 14px;
-      padding: 3px 9px;
-      border-radius: 999px;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 11px;
-      font-weight: 600;
-    }
-
-    .kicker-blue { color: #1d4ed8; background: #dbeafe; }
-    .kicker-amber { color: #92400e; background: #fef3c7; }
-    .kicker-red { color: #991b1b; background: #fee2e2; }
-
-    .card h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-      line-height: 1.35;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .writeup-showcase {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
-      gap: 14px;
-      align-items: stretch;
-    }
-
-    .writeup-feature,
-    .writeup-card {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: rgba(255, 253, 248, 0.9);
-      box-shadow: 0 12px 34px rgba(41, 31, 18, 0.06);
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .writeup-feature:hover,
-    .writeup-card:hover {
-      transform: translateY(-4px);
-      border-color: #aaa097;
-      box-shadow: 0 18px 42px rgba(41, 31, 18, 0.1);
-    }
-
-    .writeup-feature {
-      display: grid;
-      min-height: 420px;
-      padding: clamp(22px, 4vw, 34px);
-      background:
-        linear-gradient(135deg, rgba(18, 63, 59, 0.94), rgba(37, 99, 235, 0.72)),
-        #10201e;
-      color: #f8fffb;
-    }
-
-    .writeup-feature::before,
-    .writeup-card::before {
-      position: absolute;
-      inset: 0;
-      content: "";
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.09) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.09) 1px, transparent 1px);
-      background-size: 34px 34px;
-      opacity: 0.28;
-    }
-
-    .writeup-feature > *,
-    .writeup-card > * {
-      position: relative;
-    }
-
-    .article-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      align-items: center;
-      margin-bottom: 16px;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-    }
-
-    .article-pill {
-      display: inline-flex;
-      align-items: center;
-      min-height: 24px;
-      padding: 0 9px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.15);
-      color: inherit;
-    }
-
-    .writeup-feature h3,
-    .writeup-card h3 {
-      margin: 0;
-      font-size: clamp(21px, 3vw, 34px);
-      line-height: 1.28;
-      letter-spacing: 0;
-    }
-
-    .writeup-feature p,
-    .writeup-card p {
-      margin: 14px 0 0;
-      color: rgba(248, 255, 251, 0.82);
-      font-size: 15px;
-    }
-
-    .writeup-code {
-      margin: auto 0 20px;
-      padding: 16px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 8px;
-      background: rgba(7, 18, 17, 0.56);
-      color: #b7fff1;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .writeup-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .writeup-card {
-      display: grid;
-      min-height: 132px;
-      padding: 18px;
-    }
-
-    .writeup-card:nth-child(1) {
-      background: linear-gradient(135deg, rgba(255, 253, 248, 0.96), rgba(219, 234, 254, 0.72));
-    }
-
-    .writeup-card:nth-child(2) {
-      background: linear-gradient(135deg, rgba(255, 253, 248, 0.96), rgba(254, 243, 199, 0.78));
-    }
-
-    .writeup-card:nth-child(3) {
-      background: linear-gradient(135deg, rgba(255, 253, 248, 0.96), rgba(209, 250, 229, 0.72));
-    }
-
-    .writeup-card .article-pill {
-      background: rgba(18, 63, 59, 0.08);
-      color: var(--accent-dark);
-    }
-
-    .writeup-card h3 {
-      font-size: 18px;
-    }
-
-    .writeup-card p {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.65;
-    }
-
-    .read-more {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      width: fit-content;
-      margin-top: 18px;
-      color: inherit;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .read-more::after {
-      content: ">";
-      font-family: "JetBrains Mono", monospace;
-      transition: transform 0.16s ease;
-    }
-
-    .read-more:hover::after {
-      transform: translateX(4px);
-    }
-
-    .link-sections {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    details {
-      overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-    }
-
-    details[open] summary { border-bottom: 1px solid var(--line); }
-
-    summary {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-height: 58px;
-      padding: 0 16px;
-      cursor: pointer;
-      list-style: none;
-      user-select: none;
-    }
-
-    summary::-webkit-details-marker { display: none; }
-    summary:hover { background: #fbf8f1; }
-
-    .section-tag {
-      min-width: 86px;
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 10px;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    .tag-social { color: #1e40af; background: #dbeafe; }
-    .tag-ctf { color: #92400e; background: #fef3c7; }
-    .tag-bug { color: #991b1b; background: #fee2e2; }
-    .tag-news { color: #166534; background: #dcfce7; }
-    .tag-people { color: #065f46; background: #d1fae5; }
-
-    .summary-title {
-      min-width: 0;
-      font-weight: 700;
-    }
-
-    .count {
-      margin-left: auto;
-      color: #9b948b;
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-    }
-
-    .chevron {
-      width: 16px;
-      height: 16px;
-      color: #9b948b;
-      transition: transform 0.18s ease;
-    }
-
-    details[open] .chevron { transform: rotate(90deg); }
-
-    .link-grid {
-      display: grid;
-      gap: 7px;
-      padding: 10px;
-    }
-
-    .link-item {
-      display: grid;
-      grid-template-columns: 8px 1fr;
-      gap: 10px;
-      padding: 12px;
-      border: 1px solid transparent;
-      border-radius: 8px;
-      background: #faf7f0;
-      text-decoration: none;
-      transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
-    }
-
-    .link-item:hover {
-      border-color: #cbbfad;
-      background: #f1ede4;
-      transform: translateX(3px);
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      margin-top: 9px;
-      border-radius: 50%;
-    }
-
-    .dot-social { background: var(--blue); }
-    .dot-ctf { background: var(--amber); }
-    .dot-bug { background: var(--red); }
-    .dot-news { background: var(--green); }
-    .dot-people { background: var(--accent); }
-
-    .link-name {
-      margin: 0;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 1.5;
-    }
-
-    .link-desc {
-      margin: 1px 0 0;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.6;
-    }
-
-    .contact {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 20px;
-      align-items: center;
-      padding: 24px;
-      border: 1px solid #b8d8d2;
-      border-radius: 8px;
-      background: linear-gradient(135deg, rgba(15, 118, 110, 0.1), rgba(255, 253, 250, 0.92));
-    }
-
-    .contact p {
-      margin: 6px 0 0;
-      color: var(--muted);
-    }
-
-    footer {
-      margin-top: 34px;
-      color: var(--muted);
-      font-family: "JetBrains Mono", monospace;
-      font-size: 12px;
-      text-align: center;
-    }
-
-    @keyframes gridShift {
-      from { background-position: 0 0, 0 0; }
-      to { background-position: 44px 44px, 44px 44px; }
-    }
-
-    @keyframes riseIn {
-      from {
-        opacity: 0;
-        transform: translateY(16px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes floatPanel {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
-
-    @keyframes scanLine {
-      from { transform: translateY(-100%); }
-      to { transform: translateY(100%); }
-    }
-
-    @keyframes dashMove {
-      to { stroke-dashoffset: -180; }
-    }
-
-    @keyframes pulseRing {
-      0%, 100% {
-        opacity: 0.25;
-        transform: scale(0.94);
-      }
-      50% {
-        opacity: 0.55;
-        transform: scale(1.04);
-      }
-    }
-
-    @keyframes terminalGlow {
-      0%, 100% { box-shadow: 0 0 0 rgba(94, 234, 212, 0); }
-      50% { box-shadow: 0 0 36px rgba(94, 234, 212, 0.12); }
-    }
-
-    @media (max-width: 860px) {
-      .hero,
-      .writeup-showcase,
-      .link-sections,
-      .contact {
-        grid-template-columns: 1fr;
-      }
-
-      .hero { min-height: 0; }
-      .hero-copy { min-height: 430px; }
-      .card-grid { grid-template-columns: 1fr; }
-      .stats { grid-template-columns: 1fr; }
-      .nav { align-items: flex-start; }
-      .nav-links { flex-wrap: wrap; justify-content: flex-end; }
-      .writeup-feature { min-height: 380px; }
-    }
-
-    @media (max-width: 560px) {
-      .site {
-        width: min(100% - 20px, 1080px);
-        padding-top: 16px;
-      }
-
-      .nav {
-        display: grid;
-        gap: 12px;
-      }
-
-      .nav-links {
-        justify-content: flex-start;
-        font-size: 12px;
-      }
-
-      .hero-copy {
-        min-height: 410px;
-        padding: 26px 20px;
-      }
-
-      .hero-visual { min-height: 320px; }
-      .terminal { left: 12px; right: 12px; bottom: 12px; }
-      .section-head { display: block; }
-      .section-note { margin-top: 4px; }
-      summary { padding: 0 12px; }
-      .section-tag { min-width: 74px; }
-      .contact { padding: 20px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-  </style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="site">
@@ -837,8 +32,8 @@
         <p class="eyebrow">Security Engineer / CTF Player</p>
         <h1><span class="name-accent">h_Takara</span></h1>
         <p class="lead">
-          WebセキュリティとCTFを軸に、攻撃者視点で仕組みを読み解き、学んだことをwriteupや記事として残しています。
-          脆弱性調査、検証環境での実践、技術発信を継続しているセキュリティエンジニアです。
+          WebセキュリティとCTFを軸に，攻撃者視点で仕組みを読み解き，学んだことをwriteupや記事として残しています．
+          脆弱性調査，検証環境での実践，技術発信を継続しているセキュリティエンジニアです．
         </p>
         <div class="hero-actions">
           <a class="button primary" href="https://github.com/Thayato0418">GitHubを見る</a>
@@ -893,22 +88,22 @@
     <div class="stats" id="about" aria-label="活動概要">
       <div class="stat">
         <strong>CTF</strong>
-        <span>問題を解きながら、脆弱性の原理と再現方法を整理</span>
+        <span>問題を解きながら，脆弱性の原理と再現方法を整理</span>
       </div>
       <div class="stat">
         <strong>Writeup</strong>
-        <span>学びをあとから読める形にして、知識を蓄積</span>
+        <span>学びをあとから読める形にして，知識を蓄積</span>
       </div>
       <div class="stat">
         <strong>Security</strong>
-        <span>Web、調査、検証、ニュースウォッチを継続</span>
+        <span>Web，調査，検証，ニュースウォッチを継続</span>
       </div>
     </div>
 
     <section id="writeups">
       <div class="section-head">
         <h2>Writeups</h2>
-        <p class="section-note">解法の一部だけ見せて、続きは Hatena で読めるようにしました。</p>
+        <p class="section-note">解法の一部です．続きは Hatena で！</p>
       </div>
 
       <div class="writeup-showcase">
@@ -921,8 +116,8 @@
             </div>
             <h3>Diver OSINT CTF 2025 Writeup</h3>
             <p>
-              写真、地図、公開資料、音声などを手がかりに、ひとつずつ根拠を積み上げるOSINT系writeup。
-              答えそのものより、どの情報を信じて次に進むかという調査の流れが見えます。
+              写真，地図，公開資料，音声などを手がかりに，ひとつずつ根拠を積み上げるOSINT系writeup．
+              答えそのものより，どの情報を信じて次に進むかという調査の流れが見えます．
             </p>
           </div>
           <div class="writeup-code" aria-label="Diver OSINT CTF 2025 の解法メモ例">
@@ -942,7 +137,7 @@
             </div>
             <h3>N0PSctf 2025</h3>
             <p>
-              Caesar、PDF判定、TSP、音声スペクトログラム、ストリーム暗号の再利用など、幅広いジャンルを短い手順で整理しています。
+              Caesar，PDF判定，TSP，音声スペクトログラム，ストリーム暗号の再利用など，幅広いジャンルを短い手順で整理しています．
             </p>
             <a class="read-more" href="https://h-takara.hatenablog.com/entry/2025/06/05/145042">読む</a>
           </article>
@@ -954,7 +149,7 @@
             </div>
             <h3>picoCTF 2025 Writeup</h3>
             <p>
-              解いた問題の手順を、コマンドやスクリプトと一緒に追える記事。初心者にも読みやすい粒度で、試行錯誤が残っています。
+              解いた問題の手順を，コマンドやスクリプトと一緒に追える記事．初心者にも読みやすい粒度で，試行錯誤が残っています．
             </p>
             <a class="read-more" href="https://h-takara.hatenablog.com/entry/2025/03/27/213444">読む</a>
           </article>
@@ -966,7 +161,7 @@
             </div>
             <h3>TSGCTF 2024 #Web [toolong tea]</h3>
             <p>
-              Node.jsアプリの入力処理を読み、単純に見える条件分岐の裏を探るWeb問。ソースコードを読む面白さが伝わります。
+              Node.jsアプリの入力処理を読み，単純に見える条件分岐の裏を探るWeb問．ソースコードを読む面白さが伝わります．
             </p>
             <a class="read-more" href="https://h-takara.hatenablog.com/entry/2024/12/15/222155">読む</a>
           </article>
@@ -977,23 +172,23 @@
     <section id="works">
       <div class="section-head">
         <h2>Focus</h2>
-        <p class="section-note">いま何に取り組んでいる人なのかが伝わる見せ場です。</p>
+        <p class="section-note">いま何に取り組んでいる人なのかが伝わる見せ場です．</p>
       </div>
       <div class="card-grid">
         <article class="card">
           <span class="card-kicker kicker-blue">OUTPUT</span>
           <h3>CTF writeup と技術メモ</h3>
-          <p>解法だけでなく、なぜその脆弱性が成立するのか、どこでつまずいたのかを残すことを重視しています。</p>
+          <p>解法だけでなく，なぜその脆弱性が成立するのか，どこでつまずいたのかを残すことを重視しています．</p>
         </article>
         <article class="card">
           <span class="card-kicker kicker-amber">PRACTICE</span>
           <h3>実践型トレーニング</h3>
-          <p>picoCTF、TryHackMe、Hack The Box などで、攻撃手法と防御観点を手を動かしながら学習しています。</p>
+          <p>picoCTF，TryHackMe，Hack The Box などで，攻撃手法と防御観点を手を動かしながら学習しています．</p>
         </article>
         <article class="card">
           <span class="card-kicker kicker-red">RESEARCH</span>
           <h3>Bug Bounty への関心</h3>
-          <p>報奨金プラットフォームや公開事例を追い、実サービスで求められる報告品質や再現性を学んでいます。</p>
+          <p>報奨金プラットフォームや公開事例を追い，実サービスで求められる報告品質や再現性を学んでいます．</p>
         </article>
       </div>
     </section>
@@ -1001,7 +196,7 @@
     <section id="links">
       <div class="section-head">
         <h2>Links</h2>
-        <p class="section-note">発信・学習・情報収集先をまとめています。</p>
+        <p class="section-note">発信・学習・情報収集先をまとめています．</p>
       </div>
 
       <div class="link-sections">
@@ -1013,11 +208,11 @@
             <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 3 11 8 6 13"/></svg>
           </summary>
           <div class="link-grid">
-            <a class="link-item" href="https://github.com/Thayato0418"><span class="dot dot-social"></span><div><p class="link-name">GitHub</p><p class="link-desc">コード、検証、学習ログの置き場。</p></div></a>
-            <a class="link-item" href="https://h-takara.hatenablog.com/"><span class="dot dot-social"></span><div><p class="link-name">Hatena Blog</p><p class="link-desc">CTF writeup を中心にした技術ブログ。</p></div></a>
-            <a class="link-item" href="https://qiita.com/t_h_net"><span class="dot dot-social"></span><div><p class="link-name">Qiita</p><p class="link-desc">エンジニアリングの知識を記録・共有。</p></div></a>
-            <a class="link-item" href="https://x.com/t_h_net"><span class="dot dot-social"></span><div><p class="link-name">X</p><p class="link-desc">近況、学習、セキュリティ関連のメモ。</p></div></a>
-            <a class="link-item" href="https://bookmeter.com/home"><span class="dot dot-social"></span><div><p class="link-name">bookmeter</p><p class="link-desc">読書記録。</p></div></a>
+            <a class="link-item" href="https://github.com/Thayato0418"><span class="dot dot-social"></span><div><p class="link-name">GitHub</p><p class="link-desc">コード，検証，学習ログの置き場．</p></div></a>
+            <a class="link-item" href="https://h-takara.hatenablog.com/"><span class="dot dot-social"></span><div><p class="link-name">Hatena Blog</p><p class="link-desc">CTF writeup を中心にした技術ブログ．</p></div></a>
+            <a class="link-item" href="https://qiita.com/t_h_net"><span class="dot dot-social"></span><div><p class="link-name">Qiita</p><p class="link-desc">エンジニアリングの知識を記録・共有．</p></div></a>
+            <a class="link-item" href="https://x.com/t_h_net"><span class="dot dot-social"></span><div><p class="link-name">X</p><p class="link-desc">近況，学習，セキュリティ関連のメモ．</p></div></a>
+            <a class="link-item" href="https://bookmeter.com/home"><span class="dot dot-social"></span><div><p class="link-name">bookmeter</p><p class="link-desc">読書記録．</p></div></a>
           </div>
         </details>
 
@@ -1029,10 +224,10 @@
             <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 3 11 8 6 13"/></svg>
           </summary>
           <div class="link-grid">
-            <a class="link-item" href="https://play.picoctf.org/practice"><span class="dot dot-ctf"></span><div><p class="link-name">picoCTF</p><p class="link-desc">基礎から応用まで、CTFの練習に使う場所。</p></div></a>
-            <a class="link-item" href="https://tryhackme.com/dashboard"><span class="dot dot-ctf"></span><div><p class="link-name">TryHackMe</p><p class="link-desc">シナリオベースで実践的に学ぶプラットフォーム。</p></div></a>
-            <a class="link-item" href="https://ctf.hackthebox.com/"><span class="dot dot-ctf"></span><div><p class="link-name">Hack The Box</p><p class="link-desc">実践的なハッキングスキルを磨く場所。</p></div></a>
-            <a class="link-item" href="https://ctftime.org/"><span class="dot dot-ctf"></span><div><p class="link-name">CTFtime</p><p class="link-desc">大会情報とチーム・イベントの確認に利用。</p></div></a>
+            <a class="link-item" href="https://play.picoctf.org/practice"><span class="dot dot-ctf"></span><div><p class="link-name">picoCTF</p><p class="link-desc">基礎から応用まで，CTFの練習に使う場所．</p></div></a>
+            <a class="link-item" href="https://tryhackme.com/dashboard"><span class="dot dot-ctf"></span><div><p class="link-name">TryHackMe</p><p class="link-desc">シナリオベースで実践的に学ぶプラットフォーム．</p></div></a>
+            <a class="link-item" href="https://ctf.hackthebox.com/"><span class="dot dot-ctf"></span><div><p class="link-name">Hack The Box</p><p class="link-desc">実践的なハッキングスキルを磨く場所．</p></div></a>
+            <a class="link-item" href="https://ctftime.org/"><span class="dot dot-ctf"></span><div><p class="link-name">CTFtime</p><p class="link-desc">大会情報とチーム・イベントの確認に利用．</p></div></a>
           </div>
         </details>
 
@@ -1044,11 +239,11 @@
             <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 3 11 8 6 13"/></svg>
           </summary>
           <div class="link-grid">
-            <a class="link-item" href="https://issuehunt.io/"><span class="dot dot-bug"></span><div><p class="link-name">IssueHunt</p><p class="link-desc">OSS向けのバグ報奨金プラットフォーム。</p></div></a>
-            <a class="link-item" href="https://www.hackerone.com/"><span class="dot dot-bug"></span><div><p class="link-name">HackerOne</p><p class="link-desc">世界的に利用されるバグ報奨金プラットフォーム。</p></div></a>
-            <a class="link-item" href="https://www.bugcrowd.com/"><span class="dot dot-bug"></span><div><p class="link-name">Bugcrowd</p><p class="link-desc">多くのプログラムが公開されているプラットフォーム。</p></div></a>
-            <a class="link-item" href="https://www.intigriti.com/"><span class="dot dot-bug"></span><div><p class="link-name">Intigriti</p><p class="link-desc">ヨーロッパ圏で盛んなプラットフォーム。</p></div></a>
-            <a class="link-item" href="https://www.yeswehack.com/"><span class="dot dot-bug"></span><div><p class="link-name">YesWeHack</p><p class="link-desc">公開プログラムや事例を追うために利用。</p></div></a>
+            <a class="link-item" href="https://issuehunt.io/"><span class="dot dot-bug"></span><div><p class="link-name">IssueHunt</p><p class="link-desc">OSS向けのバグ報奨金プラットフォーム．</p></div></a>
+            <a class="link-item" href="https://www.hackerone.com/"><span class="dot dot-bug"></span><div><p class="link-name">HackerOne</p><p class="link-desc">世界的に利用されるバグ報奨金プラットフォーム．</p></div></a>
+            <a class="link-item" href="https://www.bugcrowd.com/"><span class="dot dot-bug"></span><div><p class="link-name">Bugcrowd</p><p class="link-desc">多くのプログラムが公開されているプラットフォーム．</p></div></a>
+            <a class="link-item" href="https://www.intigriti.com/"><span class="dot dot-bug"></span><div><p class="link-name">Intigriti</p><p class="link-desc">ヨーロッパ圏で盛んなプラットフォーム．</p></div></a>
+            <a class="link-item" href="https://www.yeswehack.com/"><span class="dot dot-bug"></span><div><p class="link-name">YesWeHack</p><p class="link-desc">公開プログラムや事例を追うために利用．</p></div></a>
           </div>
         </details>
 
@@ -1060,14 +255,14 @@
             <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 3 11 8 6 13"/></svg>
           </summary>
           <div class="link-grid">
-            <a class="link-item" href="https://gigazine.net/"><span class="dot dot-news"></span><div><p class="link-name">Gigazine</p><p class="link-desc">幅広い技術・ネットニュースを読む場所。</p></div></a>
-            <a class="link-item" href="https://www.security-next.com/"><span class="dot dot-news"></span><div><p class="link-name">Security NEXT</p><p class="link-desc">情報セキュリティ関連ニュース。</p></div></a>
-            <a class="link-item" href="https://internet.watch.impress.co.jp/"><span class="dot dot-news"></span><div><p class="link-name">INTERNET Watch</p><p class="link-desc">インターネット関連の最新情報。</p></div></a>
-            <a class="link-item" href="https://www.itmedia.co.jp/news/"><span class="dot dot-news"></span><div><p class="link-name">ITmedia NEWS</p><p class="link-desc">IT関連ニュースの確認先。</p></div></a>
-            <a class="link-item" href="https://piyolog.hatenadiary.jp/"><span class="dot dot-people"></span><div><p class="link-name">piyolog</p><p class="link-desc">セキュリティ事象の詳細なまとめ。</p></div></a>
-            <a class="link-item" href="https://www.youtube.com/@full-weak-engineer"><span class="dot dot-people"></span><div><p class="link-name">脆弱エンジニアの日常</p><p class="link-desc">セキュリティエンジニアの発信。</p></div></a>
-            <a class="link-item" href="https://www.youtube.com/c/kurenaif"><span class="dot dot-people"></span><div><p class="link-name">kurenaif</p><p class="link-desc">セキュリティ関連の知見と発信。</p></div></a>
-            <a class="link-item" href="https://www.tsujileaks.com/"><span class="dot dot-people"></span><div><p class="link-name">#セキュリティのアレ</p><p class="link-desc">セキュリティの話題を追うポッドキャスト。</p></div></a>
+            <a class="link-item" href="https://gigazine.net/"><span class="dot dot-news"></span><div><p class="link-name">Gigazine</p><p class="link-desc">幅広い技術・ネットニュースを読む場所．</p></div></a>
+            <a class="link-item" href="https://www.security-next.com/"><span class="dot dot-news"></span><div><p class="link-name">Security NEXT</p><p class="link-desc">情報セキュリティ関連ニュース．</p></div></a>
+            <a class="link-item" href="https://internet.watch.impress.co.jp/"><span class="dot dot-news"></span><div><p class="link-name">INTERNET Watch</p><p class="link-desc">インターネット関連の最新情報．</p></div></a>
+            <a class="link-item" href="https://www.itmedia.co.jp/news/"><span class="dot dot-news"></span><div><p class="link-name">ITmedia NEWS</p><p class="link-desc">IT関連ニュースの確認先．</p></div></a>
+            <a class="link-item" href="https://piyolog.hatenadiary.jp/"><span class="dot dot-people"></span><div><p class="link-name">piyolog</p><p class="link-desc">セキュリティ事象の詳細なまとめ．</p></div></a>
+            <a class="link-item" href="https://www.youtube.com/@full-weak-engineer"><span class="dot dot-people"></span><div><p class="link-name">脆弱エンジニアの日常</p><p class="link-desc">セキュリティエンジニアの発信．</p></div></a>
+            <a class="link-item" href="https://www.youtube.com/c/kurenaif"><span class="dot dot-people"></span><div><p class="link-name">kurenaif</p><p class="link-desc">セキュリティ関連の知見と発信．</p></div></a>
+            <a class="link-item" href="https://www.tsujileaks.com/"><span class="dot dot-people"></span><div><p class="link-name">#セキュリティのアレ</p><p class="link-desc">セキュリティの話題を追うポッドキャスト．</p></div></a>
           </div>
         </details>
       </div>
@@ -1076,7 +271,7 @@
     <section class="contact" id="contact">
       <div>
         <h2>Contact</h2>
-        <p>CTF、Webセキュリティ、技術発信に関する連絡は X または GitHub からお願いします。</p>
+        <p>CTF，Webセキュリティ，技術発信に関する連絡は X または GitHub からお願いします．</p>
       </div>
       <div class="hero-actions">
         <a class="button primary" href="https://x.com/t_h_net">X</a>
