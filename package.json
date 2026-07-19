@@ -1,0 +1,24 @@
+{
+  "name": "thayato0418.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hatena-article.js",
+  "scripts": {
+  "update:hatena": "node scripts/fetch-hatena-feed.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Thayato0418/Thayato0418.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Thayato0418/Thayato0418.github.io/issues"
+  },
+  "homepage": "https://github.com/Thayato0418/Thayato0418.github.io#readme",
+  "dependencies": {
+    "fast-xml-parser": "^5.10.1"
+  }
+}

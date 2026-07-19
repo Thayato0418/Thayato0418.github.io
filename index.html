@@ -91,7 +91,7 @@
         <span>問題を解きながら，脆弱性の原理と再現方法を整理</span>
       </div>
       <div class="stat">
-        <strong>Writeup</strong>
+        <strong>Blog</strong>
         <span>学びをあとから読める形にして，知識を蓄積</span>
       </div>
       <div class="stat">
@@ -102,70 +102,32 @@
 
     <section id="writeups">
       <div class="section-head">
-        <h2>Writeups</h2>
-        <p class="section-note">解法の一部です．続きは Hatena で！</p>
+        <h2>Blog</h2>
+        <p class="section-note">
+          はてなブログに投稿した最新の記事です．
+        </p>
       </div>
 
-      <div class="writeup-showcase">
-        <article class="writeup-feature">
-          <div>
-            <div class="article-meta">
-              <span class="article-pill">2025.06.09</span>
-              <span class="article-pill">OSINT</span>
-              <span class="article-pill">Diver OSINT CTF</span>
-            </div>
-            <h3>Diver OSINT CTF 2025 Writeup</h3>
-            <p>
-              写真，地図，公開資料，音声などを手がかりに，ひとつずつ根拠を積み上げるOSINT系writeup．
-              答えそのものより，どの情報を信じて次に進むかという調査の流れが見えます．
-            </p>
-          </div>
-          <div class="writeup-code" aria-label="Diver OSINT CTF 2025 の解法メモ例">
-            <div>$ inspect image</div>
-            <div>found: signboard / coordinates / public records</div>
-            <div>$ verify source</div>
-            <div class="ok">reasoning path documented on Hatena</div>
-          </div>
-          <a class="read-more" href="https://h-takara.hatenablog.com/entry/2025/06/09/003630">Hatenaで続きを読む</a>
-        </article>
+      <div
+        id="hatena-articles"
+        class="writeup-list"
+        aria-live="polite"
+        aria-busy="true"
+      >
+        <p class="article-loading">
+          記事を読み込んでいます．．．
+        </p>
+      </div>
 
-        <div class="writeup-list">
-          <article class="writeup-card">
-            <div class="article-meta">
-              <span class="article-pill">2025.06.05</span>
-              <span class="article-pill">Crypto / Forensics / Web</span>
-            </div>
-            <h3>N0PSctf 2025</h3>
-            <p>
-              Caesar，PDF判定，TSP，音声スペクトログラム，ストリーム暗号の再利用など，幅広いジャンルを短い手順で整理しています．
-            </p>
-            <a class="read-more" href="https://h-takara.hatenablog.com/entry/2025/06/05/145042">読む</a>
-          </article>
-
-          <article class="writeup-card">
-            <div class="article-meta">
-              <span class="article-pill">2025.03.27</span>
-              <span class="article-pill">picoCTF</span>
-            </div>
-            <h3>picoCTF 2025 Writeup</h3>
-            <p>
-              解いた問題の手順を，コマンドやスクリプトと一緒に追える記事．初心者にも読みやすい粒度で，試行錯誤が残っています．
-            </p>
-            <a class="read-more" href="https://h-takara.hatenablog.com/entry/2025/03/27/213444">読む</a>
-          </article>
-
-          <article class="writeup-card">
-            <div class="article-meta">
-              <span class="article-pill">2024.12.15</span>
-              <span class="article-pill">Web</span>
-            </div>
-            <h3>TSGCTF 2024 #Web [toolong tea]</h3>
-            <p>
-              Node.jsアプリの入力処理を読み，単純に見える条件分岐の裏を探るWeb問．ソースコードを読む面白さが伝わります．
-            </p>
-            <a class="read-more" href="https://h-takara.hatenablog.com/entry/2024/12/15/222155">読む</a>
-          </article>
-        </div>
+      <div class="writeup-footer">
+        <a
+          class="button"
+          href="https://h-takara.hatenablog.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Hatena Blogですべての記事を見る
+        </a>
       </div>
     </section>
 
@@ -283,5 +245,7 @@
       <span>© h_Takara</span>
     </footer>
   </div>
+
+  <script src="hatena-articles.js"></script>
 </body>
 </html>
