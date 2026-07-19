@@ -1,5 +1,5 @@
 const ARTICLES_JSON_URL = "./data/hatena-articles.json";
-const DISPLAY_COUNT = 6;
+const DISPLAY_COUNT = 3;
 
 /**
  * HTMLとして解釈される可能性がある文字を無害化する．
