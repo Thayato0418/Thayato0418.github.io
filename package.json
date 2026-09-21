@@ -4,7 +4,11 @@
   "description": "",
   "main": "hatena-article.js",
   "scripts": {
-  "update:hatena": "node scripts/fetch-hatena-feed.mjs"
+    "update:hatena": "node scripts/fetch-hatena-feed.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "dev:feed": "wrangler dev",
+    "deploy:feed": "wrangler deploy",
+    "check:feed": "wrangler deploy --dry-run"
   },
   "repository": {
     "type": "git",
@@ -20,5 +24,8 @@
   "homepage": "https://github.com/Thayato0418/Thayato0418.github.io#readme",
   "dependencies": {
     "fast-xml-parser": "^5.10.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.135.0"
   }
 }

@@ -1204,3 +1204,5 @@ footer a {
     flex-shrink:0;
   }
 }
+
+.feed-status { color: var(--muted); font-size: 11px; margin: 16px 0 0; line-height: 1.8; }

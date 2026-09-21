@@ -1,5 +1,23 @@
 [
   {
+    "title": "自宅にDeep Securityの検証環境を作ってみた",
+    "url": "https://h-takara.hatenablog.com/entry/2026/09/21/015740",
+    "publishedAt": "Mon, 21 Sep 2026 01:57:40 +0900",
+    "thumbnailUrl": "https://ogimage.blog.st-hatena.com/6801883189059069793/14945776032080420025/1789923538"
+  },
+  {
+    "title": "DIVER OSINT CTF 2026 Writeup",
+    "url": "https://h-takara.hatenablog.com/entry/2026/07/28/083719",
+    "publishedAt": "Tue, 28 Jul 2026 08:37:19 +0900",
+    "thumbnailUrl": "https://ogimage.blog.st-hatena.com/6801883189059069793/14945776032058298886/1785195487"
+  },
+  {
+    "title": "sudo-rsのpwfeedbackをUbuntu 26.04で検証してみた",
+    "url": "https://h-takara.hatenablog.com/entry/2026/07/20/153108",
+    "publishedAt": "Mon, 20 Jul 2026 15:31:08 +0900",
+    "thumbnailUrl": "https://ogimage.blog.st-hatena.com/6801883189059069793/14945776032055582349/1784529068"
+  },
+  {
     "title": "GitHub Actionsを調べていたら，GitHub Docsのテンプレート変数が画像に表示されていた話",
     "url": "https://h-takara.hatenablog.com/entry/2026/07/03/220734",
     "publishedAt": "Fri, 03 Jul 2026 22:07:34 +0900",
@@ -52,23 +70,5 @@
     "url": "https://h-takara.hatenablog.com/entry/2025/06/09/003630",
     "publishedAt": "Mon, 09 Jun 2025 00:36:30 +0900",
     "thumbnailUrl": "https://cdn.image.st-hatena.com/image/scale/6a6a3156a40e15f07d535a86a9efd324e9f06d7a/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fh%2Fh_takara%2F20250109%2F20250109163857.png"
-  },
-  {
-    "title": "N0PSctf 2025",
-    "url": "https://h-takara.hatenablog.com/entry/2025/06/05/145042",
-    "publishedAt": "Thu, 05 Jun 2025 14:50:42 +0900",
-    "thumbnailUrl": "https://cdn.image.st-hatena.com/image/scale/cd7ff253bbd07260a073a44f58885fe95190a879/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fh%2Fh_takara%2F20241215%2F20241215214004.png"
-  },
-  {
-    "title": "TsukuCTF 2025 WriteUp",
-    "url": "https://h-takara.hatenablog.com/entry/2025/05/07/141756",
-    "publishedAt": "Wed, 07 May 2025 14:17:56 +0900",
-    "thumbnailUrl": "https://cdn.image.st-hatena.com/image/scale/6a6a3156a40e15f07d535a86a9efd324e9f06d7a/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fh%2Fh_takara%2F20250109%2F20250109163857.png"
-  },
-  {
-    "title": "picoCTF 2025 Writeup",
-    "url": "https://h-takara.hatenablog.com/entry/2025/03/27/213444",
-    "publishedAt": "Thu, 27 Mar 2025 21:34:44 +0900",
-    "thumbnailUrl": "https://cdn.image.st-hatena.com/image/scale/fa16364378816e726c1d63825026ea43262e2f47/backend=imagemagick;version=1;width=1300/https%3A%2F%2Fcdn-ak.f.st-hatena.com%2Fimages%2Ffotolife%2Fh%2Fh_takara%2F20250326%2F20250326211129.png"
   }
 ]
