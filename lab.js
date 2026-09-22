@@ -19,10 +19,13 @@
     while (output.children.length > 60) output.firstElementChild.remove();
     output.scrollTop = output.scrollHeight;
   }
+  const nameForProgress = command => /^(ls|cat)(\s|$)/.test(command);
   function run(raw) {
     const command = raw.trim();
     if (!command) return;
     history.push(command);
+    if (nameForProgress(command)) document.getElementById('step-explore').classList.add('complete');
+    if (/^cat\s+\.flag$/.test(command)) document.getElementById('step-discover').classList.add('complete');
     historyIndex = history.length;
     line(`guest ❯ ${command}`, 'console-command');
     const [name, ...args] = command.split(/\s+/);
@@ -60,14 +63,34 @@
     const result = document.getElementById('flag-result');
     result.textContent = success ? '✓ CAPTURED! 好奇心こそ、最強のツール。' : 'まだ違うようです。cat .flag の結果を確認してみよう。';
     document.querySelector('.challenge').classList.toggle('solved', success);
-    if (success) line('⚑ CHALLENGE SOLVED — Welcome to the curious side.', 'console-success');
+    if (success) {
+      document.querySelectorAll('.mission-progress span').forEach(step => step.classList.add('complete'));
+      line('⚑ CHALLENGE SOLVED — Welcome to the curious side.', 'console-success');
+    }
   });
-  let count = 0;
-  const messages = ['まずは観察。見えているものを疑ってみる。', '仮説を立てる。「なぜ？」を手放さない。', '手を動かす。小さく試して、確かめる。', '発見を残す。次の誰かのヒントになる。'];
+  const topics = {
+    web: ['01 / UNDERSTAND THE SYSTEM', 'Web Security', '当たり前に動くWebの、その内側へ。攻撃者の視点から仕組みと脆弱性を読み解く。', '#works'],
+    ctf: ['02 / THINK OUTSIDE THE BOX', 'Capture the Flag', '小さな違和感を、突破口に。仮説と検証を繰り返して、隠されたフラグにたどり着く。', '#playground'],
+    notes: ['03 / LEAVE A TRAIL', 'Writeups & Notes', '解けた瞬間だけでなく、迷った道も残す。今日の発見を、次の誰かのヒントに。', '#blog']
+  };
+  document.querySelectorAll('.map-node').forEach(button => {
+    button.addEventListener('click', () => {
+      const key = button.dataset.topic;
+      const [label, title, description, href] = topics[key];
+      document.querySelector('.lab-visual').dataset.topic = key;
+      document.getElementById('engine-status').textContent = `${String(Object.keys(topics).indexOf(key) + 1).padStart(2, '0')} / 03`;
+      document.querySelectorAll('.map-node').forEach(node => node.setAttribute('aria-pressed', String(node === button)));
+      document.getElementById('topic-label').textContent = label;
+      document.getElementById('topic-title').textContent = title;
+      document.getElementById('topic-description').textContent = description;
+      const link = document.getElementById('topic-link');
+      link.href = href;
+      link.setAttribute('aria-label', `${title}の活動を見る`);
+    });
+  });
   document.getElementById('core-button').addEventListener('click', () => {
-    document.getElementById('engine-status').textContent = messages[count % messages.length];
-    count++;
-    document.getElementById('engine-count').textContent = String(count).padStart(2, '0');
-    document.querySelector('.lab-visual').style.setProperty('--turn', `${count * 45}deg`);
+    const nodes = [...document.querySelectorAll('.map-node')];
+    const current = nodes.findIndex(node => node.getAttribute('aria-pressed') === 'true');
+    nodes[(current + 1) % nodes.length].click();
   });
 })();
