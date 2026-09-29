@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "takara-hatena-feed",
+  "main": "worker/index.mjs",
+  "compatibility_date": "2026-09-21",
+  "workers_dev": true,
+  "vars": {
+    "ALLOWED_ORIGINS": "https://thayato0418.github.io,http://127.0.0.1:8765,http://localhost:8765"
+  }
+}

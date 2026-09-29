@@ -119,6 +119,8 @@
         </p>
       </div>
 
+      <p id="feed-status" class="feed-status" role="status"></p>
+      <noscript><p>最新記事は<a href="https://h-takara.hatenablog.com/">Hatena Blog</a>からご覧ください．</p></noscript>
       <div class="writeup-footer">
         <a
           class="button"
@@ -134,23 +136,26 @@
     <section id="works">
       <div class="section-head">
         <h2>Focus</h2>
-        <p class="section-note">いま何に取り組んでいる人なのかが伝わる見せ場です．</p>
+        <p class="section-note">書く，試す，深掘りする．好奇心を動かす3つのこと．</p>
       </div>
       <div class="card-grid">
-        <article class="card">
-          <span class="card-kicker kicker-blue">OUTPUT</span>
-          <h3>CTF writeup と技術メモ</h3>
-          <p>解法だけでなく，なぜその脆弱性が成立するのか，どこでつまずいたのかを残すことを重視しています．</p>
+        <article class="card focus-card focus-output">
+          <div class="focus-card-top"><span class="card-kicker kicker-blue">OUTPUT</span><span class="focus-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m15 4 5 5M4 20l5-1L21 7a2.1 2.1 0 0 0-5-5L4 14zM4 14l5 5"/></svg></span></div>
+          <h3>わかった！を，書き残す．</h3>
+          <p>CTFの解き方も，つまずいた理由も．学びをwriteupや技術メモにまとめています．</p>
+          <span class="focus-caption">CTF writeup / 技術メモ</span>
         </article>
-        <article class="card">
-          <span class="card-kicker kicker-amber">PRACTICE</span>
-          <h3>実践型トレーニング</h3>
-          <p>picoCTF，TryHackMe，Hack The Box などで，攻撃手法と防御観点を手を動かしながら学習しています．</p>
+        <article class="card focus-card focus-practice">
+          <div class="focus-card-top"><span class="card-kicker kicker-amber">PRACTICE</span><span class="focus-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m6 9 3 3-3 3m7 0h5"/></svg></span></div>
+          <h3>まずは，手を動かす．</h3>
+          <p>CTFや演習環境で，気になる攻撃手法を試す．仕組みと守り方を実践から学んでいます．</p>
+          <span class="focus-caption">picoCTF / TryHackMe / HTB</span>
         </article>
-        <article class="card">
-          <span class="card-kicker kicker-red">RESEARCH</span>
-          <h3>Bug Bounty への関心</h3>
-          <p>報奨金プラットフォームや公開事例を追い，実サービスで求められる報告品質や再現性を学んでいます．</p>
+        <article class="card focus-card focus-research">
+          <div class="focus-card-top"><span class="card-kicker kicker-red">RESEARCH</span><span class="focus-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6M7 10h6m-3-3v6"/></svg></span></div>
+          <h3>「なぜ？」を，深掘り．</h3>
+          <p>Bug Bountyの公開事例から，脆弱性の仕組みを探る．再現方法や伝わる報告を学んでいます．</p>
+          <span class="focus-caption">Bug Bounty / 公開事例の研究</span>
         </article>
       </div>
     </section>
@@ -246,6 +251,8 @@
     </footer>
   </div>
 
-  <script src="hatena-articles.js"></script>
+  <script src="feed-config.js?v=3"></script>
+  <script src="hatena-articles.js?v=2"></script>
+  <script src="links.js"></script>
 </body>
 </html>
