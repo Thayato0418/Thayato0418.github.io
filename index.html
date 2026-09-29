@@ -9,53 +9,100 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="lab-theme.css?v=5">
+<link rel="stylesheet" href="style.css">
 </head>
-<body id="top">
-  <a class="skip-link" href="#main">本文へスキップ</a>
-  <aside class="sidebar">
-    <a class="brand" href="#top" aria-label="h_Takara トップへ"><span class="brand-mark">h<span>_</span></span><span>h_Takara<small>PERSONAL ARCHIVE</small></span></a>
-    <p class="sidebar-label">DIRECTORY</p>
-    <nav class="nav-links" aria-label="ページ内ナビゲーション">
-      <a href="#about"><span>00</span> Profile <b>↗</b></a>
-      <a href="#blog"><span>01</span> Notebook <b>↗</b></a>
-      <a href="#playground"><span>02</span> Playground <b>↗</b></a>
-      <a href="#works"><span>03</span> Practice <b>↗</b></a>
-      <a href="#links"><span>04</span> Bookmarks <b>↗</b></a>
-    </nav>
-    <div class="sidebar-bottom"><span class="status-dot" aria-hidden="true"></span><p>Curiosity never<br>goes offline.</p><a href="https://github.com/Thayato0418">GitHub ↗</a><a href="https://x.com/t_h_net">X / Twitter ↗</a><a class="sidebar-contact" href="#contact">Say hello <span>↗</span></a></div>
-  </aside>
+<body>
   <div class="site">
-    <div class="topline"><span>SECURITY ENGINEERING · CTF · FIELD NOTES</span><span>A WORK IN PROGRESS <i aria-hidden="true">✳</i></span></div>
-    <main id="main">
-      <header class="identity" id="about">
-        <div class="identity-heading"><p>思考の跡。発見の断片。<br>ここは、好奇心の保管庫。</p><span class="edition">INDEPENDENT<br>EXPLORATIONS / 001</span></div>
-        <h1>h_Takara<span class="name-period">.</span></h1>
-        <div class="identity-caption"><span>Security Engineer &amp; CTF Player</span><span class="caption-rule"></span><span>探索は、まだ途中。</span></div>
-      </header>
-      <div class="intro-grid">
-        <article class="profile-note">
-          <div class="panel-label"><span>README.md</span><span aria-hidden="true">↙</span></div>
-          <h2>わからない、を<br><em>そのままにしない。</em></h2>
-          <p>Webの仕組みを読み解き、CTFで手を動かす。<br>うまくいったことも、遠回りしたことも。<br>次の発見につながるように、ここに残しています。</p>
-          <a class="inline-link" href="#blog">最近の記録を読む <span>↗</span></a>
-          <span class="note-mark" aria-hidden="true">{ }</span>
-        </article>
-        <section class="lab-visual interest-index" data-topic="web" aria-label="興味のあるテーマ">
-          <div class="panel-label"><span>ON MY MIND</span><span>3 THREADS</span></div>
-          <div class="interest-buttons" role="group" aria-label="探索するテーマ">
-            <button class="map-node" data-topic="web" aria-pressed="true"><span>01</span> Web Security <b>↗</b></button>
-            <button class="map-node" data-topic="ctf" aria-pressed="false"><span>02</span> Capture the Flag <b>↗</b></button>
-            <button class="map-node" data-topic="notes" aria-pressed="false"><span>03</span> Writeups <b>↗</b></button>
-          </div>
-          <div class="topic-inspector" aria-live="polite"><span id="topic-label">01 / UNDERSTAND THE SYSTEM</span><h3 id="topic-title">Web Security</h3><p id="topic-description">当たり前に動くWebの、その内側へ。攻撃者の視点から仕組みと脆弱性を読み解く。</p><a id="topic-link" href="#works" aria-label="Web Securityの活動を見る">Explore this thread ↗</a></div>
-          <div class="index-footer"><button id="core-button" type="button">次のテーマへ ↻</button><span id="engine-status" role="status">01 / 03</span><span id="engine-count" hidden>00</span></div>
-        </section>
+    <nav class="nav" aria-label="ページ内ナビゲーション">
+      <a class="brand" href="#">
+        <span class="brand-mark">TH</span>
+        <span>h_Takara</span>
+      </a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#blog">Blog</a>
+        <a href="#works">Focus</a>
+        <a href="#links">Links</a>
+        <a href="#contact">Contact</a>
       </div>
-      <a class="play-invite" href="#playground"><span class="invite-icon" aria-hidden="true">&gt;_</span><span><strong>A small challenge, just for you.</strong><small>このアーカイブには、隠しフラグがひとつ。</small></span><span class="invite-action">探してみる <b>↗</b></span></a>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Security Engineer / CTF Player</p>
+        <h1><span class="name-accent">h_Takara</span></h1>
+        <p class="lead">
+          WebセキュリティとCTFを軸に，攻撃者視点で仕組みを読み解き，学んだことをwriteupや記事として残しています．
+          脆弱性調査，検証環境での実践，技術発信を継続しているセキュリティエンジニアです．
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="https://github.com/Thayato0418">GitHubを見る</a>
+          <a class="button" href="#blog">Blogを読む</a>
+          <a class="button" href="https://x.com/t_h_net">Xで近況を見る</a>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="セキュリティ分析をイメージしたビジュアル">
+        <svg viewBox="0 0 640 640" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="gridGlow" x1="0" y1="0" x2="1" y2="1">
+              <stop stop-color="#5eead4" stop-opacity="0.95"/>
+              <stop offset="0.48" stop-color="#60a5fa" stop-opacity="0.45"/>
+              <stop offset="1" stop-color="#f59e0b" stop-opacity="0.75"/>
+            </linearGradient>
+            <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse">
+              <path d="M 42 0 L 0 0 0 42" fill="none" stroke="#d7fff6" stroke-opacity="0.08" stroke-width="1"/>
+            </pattern>
+          </defs>
+          <rect width="640" height="640" fill="url(#grid)"/>
+          <path class="signal-path" d="M80 460 C150 310 208 362 275 238 C342 114 412 150 560 70" fill="none" stroke="url(#gridGlow)" stroke-width="4"/>
+          <path class="signal-path" d="M102 202 L190 145 L316 198 L424 118 L540 178" fill="none" stroke="#d7fff6" stroke-opacity="0.34" stroke-width="2"/>
+          <g fill="#d7fff6">
+            <circle cx="80" cy="460" r="7"/>
+            <circle cx="275" cy="238" r="9"/>
+            <circle cx="560" cy="70" r="7"/>
+            <circle cx="190" cy="145" r="6" opacity="0.72"/>
+            <circle cx="424" cy="118" r="6" opacity="0.72"/>
+            <circle cx="540" cy="178" r="6" opacity="0.72"/>
+          </g>
+          <g stroke="#5eead4" stroke-opacity="0.32" fill="none">
+            <circle class="pulse-ring" cx="320" cy="260" r="72"/>
+            <circle class="pulse-ring" cx="320" cy="260" r="122"/>
+            <circle class="pulse-ring" cx="320" cy="260" r="178"/>
+          </g>
+        </svg>
+        <div class="terminal" aria-hidden="true">
+          <div class="terminal-bar">
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+            <span class="terminal-dot"></span>
+          </div>
+          <div><span class="prompt">$</span> whoami</div>
+          <div class="ok">h_Takara: security engineer</div>
+          <div><span class="prompt">$</span> focus --list</div>
+          <div>web security / ctf / bug bounty / blog</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="stats" id="about" aria-label="活動概要">
+      <div class="stat">
+        <strong>CTF</strong>
+        <span>問題を解きながら，脆弱性の原理と再現方法を整理</span>
+      </div>
+      <div class="stat">
+        <strong>Blog</strong>
+        <span>学びをあとから読める形にして，知識を蓄積</span>
+      </div>
+      <div class="stat">
+        <strong>Security</strong>
+        <span>Web，調査，検証，ニュースウォッチを継続</span>
+      </div>
+    </div>
+
     <section id="blog">
       <div class="section-head">
-        <div><p class="section-label">01 / FROM THE NOTEBOOK</p><h2>Notes from <span>the field.</span></h2></div>
+        <h2>Blog</h2>
         <p class="section-note">
           はてなブログに投稿した最新の記事です．
         </p>
@@ -72,8 +119,6 @@
         </p>
       </div>
 
-      <p id="feed-status" class="feed-status" role="status"></p>
-      <noscript><p>最新記事は<a href="https://h-takara.hatenablog.com/">Hatena Blog</a>からご覧ください．</p></noscript>
       <div class="writeup-footer">
         <a
           class="button"
@@ -86,38 +131,24 @@
       </div>
     </section>
 
-    <section id="playground" class="playground">
-      <div class="section-head"><div><p class="section-label">02 / INTERACTIVE</p><h2>Take a little <span>detour.</span></h2></div><p class="section-note">知識は不要。必要なのは、ちょっとした好奇心。<br>コマンドを試して、隠されたフラグを見つけよう。</p></div>
-      <div class="play-grid">
-        <div class="live-terminal">
-          <div class="console-bar"><span><i></i><i></i><i></i></span><span>guest@takara-lab: ~</span><span class="console-badge">● SANDBOX</span></div>
-          <div class="console-output" id="console-output" role="log" aria-label="コマンドの実行結果" aria-live="polite" tabindex="0"><p class="console-muted">TAKARA LAB / interactive shell v1.0</p><p>ようこそ。まずは <b>help</b> を入力してみてください。</p><p class="console-muted">このページ内で遊べる、小さなターミナルです。</p></div>
-          <form id="command-form" class="command-form"><label for="command-input">guest <span>❯</span></label><input id="command-input" name="command" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" maxlength="160" placeholder="help" aria-label="ターミナルのコマンド"><button type="submit" aria-label="コマンドを実行">↵</button></form>
-          <div class="command-shortcuts" aria-label="コマンドのショートカット"><button type="button" data-command="help">help</button><button type="button" data-command="whoami">whoami</button><button type="button" data-command="ls -a">ls -a</button><button type="button" data-command="cat .hint">cat .hint</button><button type="button" data-command="clear">clear</button></div>
-        </div>
-        <aside class="challenge"><div class="challenge-top"><span>MISSION / 001</span><span>★ BEGINNER</span></div><div class="mission-progress" aria-label="ミッションの進捗"><span id="step-explore">01 探索</span><span id="step-discover">02 発見</span><span id="step-capture">03 獲得</span></div><div class="flag-icon" aria-hidden="true">⚑</div><h3>A little mystery.<br>A hidden flag.</h3><p>このラボに隠されたフラグを見つけよう。<br>入口は、ターミナルの「隠しファイル」。</p><form id="flag-form"><label for="flag-input">見つけたフラグを入力</label><div class="flag-field"><input id="flag-input" placeholder="flag{...}" autocomplete="off" autocapitalize="off" spellcheck="false" required maxlength="100"><button type="submit" aria-label="フラグを確認">→</button></div></form><p id="flag-result" role="status">STATUS: UNSOLVED</p><button type="button" class="hint-button" id="hint-button" aria-expanded="false" aria-controls="challenge-hint">ヒントを見る ＋</button><p id="challenge-hint" hidden>「ls -a」で隠しファイルも表示できます。続いて「cat .hint」を実行してみよう。</p></aside>
-      </div>
-      <noscript><p>ターミナルとミニCTFを遊ぶにはJavaScriptを有効にしてください。プロフィールやリンクはそのままご覧いただけます。</p></noscript>
-    </section>
-
     <section id="works">
       <div class="section-head">
-        <div><p class="section-label">03 / PRACTICE</p><h2>Always <span>in progress.</span></h2></div>
-        <p class="section-note">調べる，試す，記録する．日々の活動の軸です．</p>
+        <h2>Focus</h2>
+        <p class="section-note">いま何に取り組んでいる人なのかが伝わる見せ場です．</p>
       </div>
       <div class="card-grid">
         <article class="card">
-          <div class="focus-illustration focus-output" aria-hidden="true"><span>&lt;/&gt;</span><i></i><i></i><i></i></div><span class="card-kicker kicker-blue">01 / DOCUMENT</span>
+          <span class="card-kicker kicker-blue">OUTPUT</span>
           <h3>CTF writeup と技術メモ</h3>
           <p>解法だけでなく，なぜその脆弱性が成立するのか，どこでつまずいたのかを残すことを重視しています．</p>
         </article>
         <article class="card">
-          <div class="focus-illustration focus-practice" aria-hidden="true"><span>⚑</span><i></i><i></i><i></i></div><span class="card-kicker kicker-amber">02 / EXPERIMENT</span>
+          <span class="card-kicker kicker-amber">PRACTICE</span>
           <h3>実践型トレーニング</h3>
           <p>picoCTF，TryHackMe，Hack The Box などで，攻撃手法と防御観点を手を動かしながら学習しています．</p>
         </article>
         <article class="card">
-          <div class="focus-illustration focus-research" aria-hidden="true"><span>⌕</span><i></i><i></i><i></i></div><span class="card-kicker kicker-red">03 / INVESTIGATE</span>
+          <span class="card-kicker kicker-red">RESEARCH</span>
           <h3>Bug Bounty への関心</h3>
           <p>報奨金プラットフォームや公開事例を追い，実サービスで求められる報告品質や再現性を学んでいます．</p>
         </article>
@@ -126,7 +157,7 @@
 
     <section id="links">
       <div class="section-head">
-        <div><p class="section-label">04 / ELSEWHERE</p><h2>Connected <span>dots.</span></h2></div>
+        <h2>Links</h2>
         <p class="section-note">発信・学習・情報収集先をまとめています．</p>
       </div>
 
@@ -201,7 +232,7 @@
 
     <section class="contact" id="contact">
       <div>
-        <p class="section-label">05 / OPEN A CONNECTION</p><h2>Let’s exchange<br><span class="name-accent">a few ideas.</span></h2>
+        <h2>Contact</h2>
         <p>CTF，Webセキュリティ，技術発信に関する連絡は X または GitHub からお願いします．</p>
       </div>
       <div class="hero-actions">
@@ -210,11 +241,11 @@
       </div>
     </section>
 
-    </main>
-    <footer><span>© h_Takara / Built on curiosity.</span><a href="#top">Back to the surface ↑</a></footer>
+    <footer>
+      <span>© h_Takara</span>
+    </footer>
   </div>
-  <script src="feed-config.js?v=3"></script>
-  <script src="hatena-articles.js?v=2"></script>
-  <script src="lab.js?v=5"></script>
+
+  <script src="hatena-articles.js"></script>
 </body>
 </html>
